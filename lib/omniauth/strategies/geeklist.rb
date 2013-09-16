@@ -21,7 +21,7 @@ module OmniAuth
         super
       end
 
-      uid { raw_info['data']['id'] }
+      uid { raw_info['data']['_id'] }
 
       info do
         {
@@ -32,8 +32,8 @@ module OmniAuth
           :image => raw_info['data']['avatar']['small'],
           :description => raw_info['data']['bio'],
           :urls => {
-            'Website' => raw_info['data']['blog_url'],
-            'Geeklist' => 'http://geekli.st/' + raw_info['data']['screen_name'],
+            'Website' => raw_info['data']['blog_link'],
+            'Geeklist' => 'https://geekli.st/' + raw_info['data']['screen_name'],
           }
         }
       end
